@@ -1,3 +1,11 @@
+Hackerschool::Application.configure do
+  # ...
+  
+end
+
+
+
+
 Laserbeard::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -34,4 +42,10 @@ Laserbeard::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # logging for dev reasons
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger.const_get(
+    ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'DEBUG'
+  )
 end
