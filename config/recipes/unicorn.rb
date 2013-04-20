@@ -16,10 +16,6 @@ namespace :unicorn do
   end
   after "deploy:setup", "unicorn:setup"
 
-  before_exec do |server|
-    ENV['BUNDLE_GEMFILE'] = "#{root}/Gemfile"
-  end
-
   %w[start stop restart].each do |command|
     desc "#{command} unicorn"
     task command, roles: :app do

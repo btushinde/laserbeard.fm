@@ -32,3 +32,7 @@ after_fork do |server, worker|
     ActiveRecord::Base.establish_connection
   end
 end
+
+before_exec do |server|
+  ENV['BUNDLE_GEMFILE'] = "/home/deployer/www/laserbeard/current/Gemfile"
+end
