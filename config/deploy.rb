@@ -24,7 +24,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, "git"
-set :repository, "git@github.com:smashingboxes/laserbeard.git"
+set :repository, "git@github.com:btushinde/laserbeard.fm.git"
 set :branch, "master"
 set :remote, 'origin'
 
