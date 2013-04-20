@@ -35,6 +35,10 @@ namespace :unicorn do
   # before "unicorn:restart", "unicorn:bundle_install"
 end
 
+ before_exec do |server|
+    ENV['BUNDLE_GEMFILE'] = "#{root}/Gemfile"
+ end
+
 
 # desc "Zero-downtime restart of Unicorn"
 # task :restart, :except => { :no_release => true } do
